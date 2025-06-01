@@ -16,7 +16,7 @@ def most_frequest_nums(nums,k):
 list1 = [1,2,1, 2, 1, 3, 4, 5, 4, 4]
 k = 2
 
-ans = most_frequest_words(list1,k)
+ans = most_frequest_nums(list1,k)
 print(ans)
 
 
