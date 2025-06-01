@@ -2,7 +2,7 @@
 # Write a Python function that returns the k most frequent elements in descending order of frequency. 
 # nums - [1,2,1, 2, 1, 3, 4, 5, 4, 4],  k=2
 
-def most_frequest_words(nums,k):
+def most_frequest_nums(nums,k):
     empty_dict = {}
     for num in nums:
         empty_dict[num] = empty_dict.get(num, 0) + 1
