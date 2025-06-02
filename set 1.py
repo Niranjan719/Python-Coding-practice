@@ -39,3 +39,87 @@ def find_pairs(nums, target):
 nums = [2, 4, 3, 5, 2, 3, 4, 7, 8, 1]
 target = 9  
 print(find_pairs(nums, target))
+
+
+#Q3. Write a function that rotates a list to the right by k steps.
+# nums = [1, 2, 3, 4, 5, 6, 7], k = 3  
+# Output: [5, 6, 7, 1, 2, 3, 4]
+def rotate_list(nums, k):
+    n = len(nums)
+    k = k % n  # Handle cases where k is greater than the length of the list
+    print(nums[-k:])
+    return nums[-k:] + nums[:-k]
+
+nums = [1, 2, 3, 4, 5, 6, 7]
+k = 3
+rotated_list = rotate_list(nums, k)
+print(rotated_list)
+
+#Q4. Given a list of integers, write a function to find the longest increasing subsequence.
+def longest_increasing_subsequence(nums):
+    if not nums:
+        return []
+
+    n = len(nums)
+    dp = [1] * n  # dp[i] will hold the length of the LIS ending at index i
+    prev = [-1] * n  # To reconstruct the path
+
+    for i in range(n):
+        for j in range(i):
+            if nums[i] > nums[j] and dp[i] < dp[j] + 1:
+                dp[i] = dp[j] + 1
+                prev[i] = j
+
+    # Find the maximum length and its index
+    max_length = max(dp)
+    max_index = dp.index(max_length)
+
+    # Reconstruct the longest increasing subsequence
+    lis = []
+    while max_index != -1:
+        lis.append(nums[max_index])
+        max_index = prev[max_index]
+
+    return lis[::-1]  # Reverse to get the correct order
+nums = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+print(longest_increasing_subsequence(nums))
+
+
+#Q5. Write a function to find the intersection of two lists.
+def intersection_of_lists(list1, list2):
+    set1 = set(list1)
+    set2 = set(list2)
+    intersection = set1.intersection(set2)
+    return list(intersection)
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+result = intersection_of_lists(list1, list2)
+print(result)
+
+
+#Q6. Given a string, 
+# find the length of the longest substring without repeating characters.
+# example: "abcabcbb" should return 3 for "abc".
+
+def length_of_longest_substring(s):
+    char_index_map = {}
+    max_length = 0
+    start = 0
+
+    for i, char in enumerate(s):
+        if char in char_index_map and char_index_map[char] >= start:
+            start = char_index_map[char] + 1
+        char_index_map[char] = i
+        max_length = max(max_length, i - start + 1)
+
+    return max_length
+s = "abcabcbb"
+print(length_of_longest_substring(s))  # Output: 3
+
+#Q7. Write a function to check if a string is a palindrome.
+def is_palindrome(s):
+    s = s.lower()  # Convert to lowercase for case-insensitive comparison
+    s = ''.join(filter(str.isalnum, s))  # Remove non-alphanumeric characters
+    return s == s[::-1]  # Check if the string is equal to its reverse
+
+print(is_palindrome("Racecar"))  # Output: True

@@ -1,0 +1,6 @@
+1. https://www.w3resource.com/python-exercises/
+
+
+2. https://pynative.com/python-exercises-with-solutions/
+
+3. https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/
