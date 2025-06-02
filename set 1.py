@@ -123,3 +123,16 @@ def is_palindrome(s):
     return s == s[::-1]  # Check if the string is equal to its reverse
 
 print(is_palindrome("Racecar"))  # Output: True
+
+#Q8. Given a list of integers, write a function to find the maximum product of two distinct elements.
+def max_product_of_two(nums):
+    if len(nums) < 2:
+        return None  # Not enough elements to form a product
+
+    max1 = max(nums)
+    nums.remove(max1)
+    max2 = max(nums)
+
+    return max1 * max2
+nums = [3, 5, 1, 7, 9]
+print(max_product_of_two(nums))  # Output: 63 (9 * 7)
