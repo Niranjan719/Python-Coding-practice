@@ -19,17 +19,17 @@ Input: arr = [4, 4, 2, 3, 2, 2, 4, 3]
 
 Output: [4, 2, 3]
 """
-def removeDuplicates(arr):
-  if len(arr) == 0:
-    return []
-  arr.sort()
-  noDuplicatesArr = [arr[0]]
-  for i in range(1, len(arr)):
-    if arr[i] != arr[i-1]:
-      noDuplicatesArr.append(arr[i])
-  return noDuplicatesArr
+# def removeDuplicates(arr):
+#   if len(arr) == 0:
+#     return []
+#   arr.sort()
+#   noDuplicatesArr = [arr[0]]
+#   for i in range(1, len(arr)):
+#     if arr[i] != arr[i-1]:
+#       noDuplicatesArr.append(arr[i])
+#   return noDuplicatesArr
 
-print(removeDuplicates([4, 2, 5, 3, 3, 1, 2, 4, 1, 5, 5, 5, 3, 1]))  # Output: [1, 2, 3, 4, 5]
+# print(removeDuplicates([4, 2, 5, 3, 3, 1, 2, 4, 1, 5, 5, 5, 3, 1]))  # Output: [1, 2, 3, 4, 5]
 
 
 
@@ -45,6 +45,7 @@ def remove_duplicates(arr):
         result.append(num)
     return result
 
+print(remove_duplicates([4, 2, 5, 3, 3, 1, 2, 4, 1, 5, 5, 5, 3, 1,100]))
 
 def removeDuplicates(arr):
     # your code here

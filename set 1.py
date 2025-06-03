@@ -7,9 +7,10 @@ def most_frequest_nums(nums,k):
     for num in nums:
         empty_dict[num] = empty_dict.get(num, 0) + 1
     work_list = list(empty_dict.items())
-    sorted_list = sorted(work_list, key=lambda x: x[1], reverse = True)
+    work_list.sort(key=lambda x: x[1], reverse = True)
+    print(work_list)
     answer_list = []
-    for item in sorted_list[:k]:
+    for item in work_list[:k]:
         answer_list.append(item[0])
     return answer_list
     
