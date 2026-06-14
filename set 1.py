@@ -2,6 +2,8 @@
 # Write a Python function that returns the k most frequent elements in descending order of frequency. 
 # nums - [1,2,1, 2, 1, 3, 4, 5, 4, 4],  k=2
 
+#sample Output: [1, 4] (since 1 appears 3 times and 4 appears 3 times, they are the most frequent elements)
+
 def most_frequest_nums(nums,k):
     empty_dict = {}
     for num in nums:

@@ -39,15 +39,40 @@ print(firstRepeatingCharacter(str))  # Output: 'i'
 
 #=============================================
 
-# Using a set to track seen characters:
+# Using a set to track seen characters (Optimal - O(n) time):
 
-def firstRepeatingCharacter(str):
+def firstRepeatingCharacter_optimized(str):
     seen = set()
     for char in str:
         if char in seen:
             return char
         seen.add(char)
     return '\0'  # Return null character if no repeating character is found
+
+#=============================================
+# Test Cases:
+if __name__ == "__main__":
+    # Example 1
+    result1 = firstRepeatingCharacter("inside code")
+    print(f"Test 1 - Input: 'inside code', Output: '{result1}', Expected: 'i'")
+    
+    # Example 2
+    result2 = firstRepeatingCharacter("programming")
+    print(f"Test 2 - Input: 'programming', Output: '{result2}', Expected: 'r'")
+    
+    # Example 3
+    result3 = firstRepeatingCharacter("abcd")
+    print(f"Test 3 - Input: 'abcd', Output: '{result3}', Expected: '\\0'")
+    
+    # Example 4
+    result4 = firstRepeatingCharacter("abba")
+    print(f"Test 4 - Input: 'abba', Output: '{result4}', Expected: 'b'")
+    
+    print("\n--- Optimized Version ---")
+    print(f"Test 1 - Input: 'inside code', Output: '{firstRepeatingCharacter_optimized('inside code')}', Expected: 'i'")
+    print(f"Test 2 - Input: 'programming', Output: '{firstRepeatingCharacter_optimized('programming')}', Expected: 'r'")
+    print(f"Test 3 - Input: 'abcd', Output: '{firstRepeatingCharacter_optimized('abcd')}', Expected: '\\0'")
+    print(f"Test 4 - Input: 'abba', Output: '{firstRepeatingCharacter_optimized('abba')}', Expected: 'b'")
 
 """
 Complexity analysis

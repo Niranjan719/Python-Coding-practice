@@ -92,20 +92,6 @@ print(findDuplicateFloyd(arr2))  # Output: 2
 # Time complexity: O(n)
 # Space complexity: O(1) since we are not using any extra space apart from a few variables
 
-def findDuplicate(arr):
-  tortoise = arr[0]
-  hare = arr[0]
-  while True:
-    tortoise = arr[tortoise]
-    hare = arr[arr[hare]]
-    if tortoise == hare:
-      break
-  tortoise = arr[0]
-  while tortoise != hare:
-    tortoise = arr[tortoise]
-    hare = arr[hare]
-  return tortoise
-
 arr1 = [4, 2, 1, 3, 1]
 arr2 = [1, 4, 2, 2, 5, 2]
 print(findDuplicate(arr1))  # Output: 1
