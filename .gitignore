@@ -1,0 +1,15 @@
+# Ignore python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Environment and sensitive data
+.env
